@@ -1,1 +1,16 @@
-{}
+{
+  "name": "Roçagem e Poda",
+  "short_name": "Roçagem",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2e7d32",
+  "description": "Solicite orçamento de roçagem e poda",
+  "icons": [
+    {
+      "src": "logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ]
+}
