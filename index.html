@@ -1,82 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>App Roçagem e Poda</title>
+<title>Roçagem e Poda</title>
 
-<style>
+<link rel="stylesheet" href="style.css">
 
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#eaf7ea;
-}
-
-header{
-background:#2E7D32;
-color:white;
-text-align:center;
-padding:20px;
-font-size:28px;
-font-weight:bold;
-}
-
-.container{
-max-width:700px;
-margin:25px auto;
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 0 15px rgba(0,0,0,.2);
-}
-
-h2{
-color:#2E7D32;
-text-align:center;
-}
-
-input,textarea{
-width:100%;
-padding:12px;
-margin-top:12px;
-border-radius:8px;
-border:1px solid #ccc;
-font-size:16px;
-box-sizing:border-box;
-}
-
-input[type=file]{
-background:#f5f5f5;
-}
-
-button{
-width:100%;
-padding:15px;
-margin-top:20px;
-font-size:18px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-}
-
-.btn{
-background:#25D366;
-color:white;
-}
-
-.btn:hover{
-background:#128C7E;
-}
-
-footer{
-text-align:center;
-padding:20px;
-color:#555;
-}
-
-</style>
+<link rel="manifest" href="manifest.json">
 
 </head>
 
@@ -84,72 +19,83 @@ color:#555;
 
 <header>
 
-🌿 APP ROÇAGEM E PODA
+<div class="logo">
 
-</header>
+<img src="logo.jpg" alt="Logo">
 
-<div class="container">
+<h1>ROÇAGEM E PODA</h1>
 
-<h2>Solicite seu orçamento grátis</h2>
-
-<input type="text" id="nome" placeholder="Nome">
-
-<input type="tel" id="telefone" placeholder="Telefone">
-
-<input type="text" id="endereco" placeholder="Endereço do serviço">
-
-<textarea id="descricao" rows="5" placeholder="Descreva o serviço"></textarea>
-
-<label><strong>Fotos do local</strong></label>
-
-<input type="file" id="foto" multiple accept="image/*">
-
-<button class="btn" onclick="enviarWhatsapp()">
-
-📲 ENVIAR ORÇAMENTO PELO WHATSAPP
-
-</button>
+<p>Orçamento rápido e gratuito</p>
 
 </div>
 
-<footer>
+</header>
 
-© 2026 App Roçagem e Poda
+<main>
 
-</footer>
+<section class="formulario">
 
-<script>
+<h2>Solicite seu orçamento</h2>
 
-function enviarWhatsapp(){
+<form id="orcamento">
 
-let nome=document.getElementById("nome").value;
+<label>Nome</label>
 
-let telefone=document.getElementById("telefone").value;
+<input
+type="text"
+id="nome"
+placeholder="Digite seu nome"
+required>
 
-let endereco=document.getElementById("endereco").value;
+<label>Telefone</label>
 
-let descricao=document.getElementById("descricao").value;
+<input
+type="tel"
+id="telefone"
+placeholder="(21) 99999-9999"
+required>
 
-let mensagem=`Olá!
+<label>Endereço</label>
 
-Gostaria de solicitar um orçamento.
+<input
+type="text"
+id="endereco"
+placeholder="Rua, número e bairro"
+required>
 
-Nome: ${nome}
+<label>Descrição do serviço</label>
 
-Telefone: ${telefone}
+<textarea
+id="descricao"
+rows="5"
+placeholder="Ex.: terreno com mato alto e pequena poda de árvores"></textarea>
 
-Endereço: ${endereco}
+<label>Fotos do local</label>
 
-Descrição:
-${descricao}
+<input
+type="file"
+id="fotos"
+accept="image/*"
+multiple>
 
-As fotos serão enviadas logo após esta mensagem.`;
+<div id="preview"></div>
 
-window.open("https://wa.me/5521991960469?text="+encodeURIComponent(mensagem));
+<button
+type="button"
+onclick="enviarWhatsapp()">
 
-}
+Solicitar orçamento pelo WhatsApp
 
-</script>
+</button>
+
+</form>
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
